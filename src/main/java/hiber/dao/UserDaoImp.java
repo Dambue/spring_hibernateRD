@@ -6,7 +6,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -29,13 +28,12 @@ public class UserDaoImp implements UserDao {
    }
 
    @Override
-   public User getUserCar(Car car) {
-      String hql = "select u from User u where u.car= :paramCar";
+   public User getUserCar(String model, int series) {
+      String hql = "from User where car.model = :model and car.series = :series";
       User user = sessionFactory.getCurrentSession().createQuery(hql, User.class)
-              .setParameter("paramCar", car)
+              .setParameter("model", model)
+              .setParameter("series", series)
               .uniqueResult();
       return user;
    }
-
-
 }
