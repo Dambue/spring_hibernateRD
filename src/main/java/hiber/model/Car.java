@@ -18,7 +18,6 @@ public class Car {
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "user_id")
     private User user;
 
     public Car() {
