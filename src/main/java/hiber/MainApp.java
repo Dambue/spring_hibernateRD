@@ -19,9 +19,9 @@ public class MainApp {
       User user1 = new User("User1", "Lastname1", "user1@mail.ru");
       User user2 = new User("User2", "Lastname2", "user2@mail.ru");
       Car car1 = new Car("Model1", 1);
-      Car car2 = new Car("Model2", 2);
+ //     Car car2 = new Car("Model2", 2);
       car1.setUser(user1);
-      car2.setUser(user2);
+ //     car2.setUser(user2);
 
       userService.add(user1);
       userService.add(user2);
